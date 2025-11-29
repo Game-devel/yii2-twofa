@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist promocat/yii2-twofa "*"
+php composer.phar require --prefer-dist game-devel/yii2-twofa "*"
 ```
 
 or add
 
 ```
-"promocat/yii2-twofa": "*"
+"game-devel/yii2-twofa": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -26,13 +26,13 @@ Setup
 
 Update the user component in your config file to use the class
 ```
-promocat\twofa\User::class
+game-devel\twofa\User::class
 ```
 It should sorta look like this
 ```
 'components' => [
     'user' => [
-        'class' => promocat\twofa\User::class,
+        'class' => game-devel\twofa\User::class,
         'identityClass' => 'common\models\User',
         'enableAutoLogin' => true,
         'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
@@ -42,7 +42,7 @@ It should sorta look like this
 
 Also add the "twoFa" component:
 ```
-'twoFa' => ['class' => promocat\twofa\TwoFa::class]
+'twoFa' => ['class' => game-devel\twofa\TwoFa::class]
 ```
 
 Next, add the TwoFaBehavior to your User model
@@ -68,7 +68,7 @@ Yii::$app->twofa->checkCode($secret, $code);
 
 Use
 ```
-promocat\models\TwoFaForm
+game-devel\models\TwoFaForm
 ```
 for the 2FA activation and verification forms. Or at least let is be an example. 
 
