@@ -26,13 +26,13 @@ Setup
 
 Update the user component in your config file to use the class
 ```
-game-devel\twofa\User::class
+promocat\twofa\User::class
 ```
 It should sorta look like this
 ```
 'components' => [
     'user' => [
-        'class' => game-devel\twofa\User::class,
+        'class' => promocat\twofa\User::class,
         'identityClass' => 'common\models\User',
         'enableAutoLogin' => true,
         'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
@@ -42,7 +42,7 @@ It should sorta look like this
 
 Also add the "twoFa" component:
 ```
-'twoFa' => ['class' => game-devel\twofa\TwoFa::class]
+'twoFa' => ['class' => promocat\twofa\TwoFa::class]
 ```
 
 Next, add the TwoFaBehavior to your User model
@@ -68,7 +68,7 @@ Yii::$app->twofa->checkCode($secret, $code);
 
 Use
 ```
-game-devel\models\TwoFaForm
+promocat\models\TwoFaForm
 ```
 for the 2FA activation and verification forms. Or at least let is be an example. 
 
